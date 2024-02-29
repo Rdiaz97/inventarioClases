@@ -10,7 +10,6 @@
     include "conexion.php";
     ?>
     <form action="alumnos.php" method="get">
-
         <label for="name">Nombre</label>
         <input type="text" id="name">
 
