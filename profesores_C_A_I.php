@@ -46,6 +46,7 @@
     <section>
         <button id="materias">Materia</button>
         <button id="inventarios">Inventario</button>
+        <button id="consultas">Consultas</button>
         <a href="salir.php"><input type="submit" value="Salir"></a>
     </section>
     <form action="asistencia.php" method="get" id="materia" name="formMateria" class="materia">

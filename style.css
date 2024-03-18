@@ -21,10 +21,6 @@ img{
 
 }
 
-/* .oculto .activas {
-    display: block;
-} */
-
 .menu{
     background: linear-gradient(90deg, #720000 0, #720000);
     margin: 0;
@@ -61,7 +57,7 @@ ul{
 #nav-historia-div{
     position: absolute;
     background: #720000;
-    max-width: 70%;
+    max-width: 90%;
     margin: 0 auto; 
 }
 
@@ -189,6 +185,7 @@ input[type="button"]:hover {
         text-align: center;
     }
     #h1_registro_a{
+        margin-top: 60px;
         font-size: 5vh;
     }
 
@@ -206,10 +203,15 @@ input[type="button"]:hover {
         border:none;
         width:50vh;
     }
+
     
     .nav-historia{
-        width: 140%;
-        max-width: 150%;
+        width: 130%;
+        max-width: 140%;
+    }
+    
+    #nav-historia-index{
+        width: 100%;
     }
 
     #form_pizarra{

@@ -15,7 +15,7 @@
             <li><img id="logo" src="logo.png" alt="">
         <img class="oculto" src="giphy.gif"></li>
             <li id="historia">Breve historia del IUTIRLA
-                <div class="nav-historia">
+                <div class="nav-historia" id="nav-historia-index">
                     <div id="nav-historia-div">
                         <p d="nav-historia-p" style="font-size: 16px;">La historia del IUTIRLA se remonta a su fundación el 15 de octubre de 1970, en honor al destacado dirigente político venezolano Rodolfo Loero Arismendi. Desde sus inicios, se ha destacado por ofrecer programas académicos orientados a la formación técnica e industrial, contribuyendo al desarrollo del país en estas áreas.
 
