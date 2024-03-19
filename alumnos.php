@@ -27,6 +27,14 @@
     <?php
     include 'conexion.php';
     ?>
+    <!-- <form action="">
+<input type="radio" value="semestre1" id="semestre1" name="semestre"><label for="semestre1">semestre1</label>
+<input type="radio" value="semestre2" id="semestre2" name="semestre"><label for="semestre2">semestre2</label>
+<input type="radio" value="semestre3" id="semestre3" name="semestre"><label for="semestre3">semestre3</label>
+<input type="radio" value="semestre4" id="semestre4" name="semestre"><label for="semestre4">semestre4</label>
+<input type="radio" value="semestre5" id="semestre5" name="semestre"><label for="semestre5">semestre5</label>
+<input type="radio" value="semestre6" id="semestre6" name="semestre"><label for="semestre6">semestre6</label>
+    </form> -->
         <form id="form-consulta">
         <a href="profesores_C_A_I.php"><button type="button">Volver</button></a>    
 
@@ -52,7 +60,7 @@
         ?>  <option selected>Nombre del estudiante</option><?php
         while($row_estudiante=mysqli_fetch_array($res_estudiante)){
         ?>
-            <option><?php echo $row_estudiante["nombre_estudiante"];?></option>
+            <option value="<?php echo $row_estudiante["cedula"]?>"><?php echo "cedula: ".$row_estudiante["cedula"]." Nombre: ".$row_estudiante["nombre_estudiante"];?></option>
         <?php
         }
         ?>
@@ -64,15 +72,21 @@
     $nombre_materia=$_GET["nombre_materia"]?? null;
 
     if(isset($nombre_estudiante)&& isset($nombre_materia)){
-        $sql= "SELECT `materia`.`nombre`, `tabla_asistencia_estudiante`.*, `estudiantes`.`nombre_estudiante`
-        FROM `materia` 
-            LEFT JOIN `tabla_asistencia_estudiante` ON `tabla_asistencia_estudiante`.`materia` = `materia`.`codigo` 
-            LEFT JOIN `estudiantes` ON `tabla_asistencia_estudiante`.`usuario` = `estudiantes`.`cedula`
-        WHERE `materia`.`nombre` = '$nombre_materia' AND `estudiantes`.`nombre_estudiante` = '$nombre_estudiante';";
+        $sql= "SELECT `estudiantes`.`cedula`, `estudiantes`.`nombre_estudiante`, `tabla_asistencia_estudiante`.`fecha_hora`, `materia`.`nombre`
+        FROM `estudiantes` 
+            LEFT JOIN `tabla_asistencia_estudiante` ON `tabla_asistencia_estudiante`.`usuario` = `estudiantes`.`cedula` 
+            LEFT JOIN `materia` ON `tabla_asistencia_estudiante`.`materia` = `materia`.`codigo`
+        WHERE `estudiantes`.`cedula` = '$nombre_estudiante' AND `materia`.`nombre` = '$nombre_materia';";
         $res=mysqli_query($conexion,$sql);
-        while ($filas=mysqli_fetch_array($res)) {
+        if(mysqli_num_rows($res)!= 0){
+        while ($filas=mysqli_fetch_array($res))
+         {
+
             ?><div id="section-consulta"><?php
             echo"estudiante: ".$filas["nombre_estudiante"];?><br><?php echo "hora de entrada a la clase: ".$filas["fecha_hora"];?><br><?php echo"materia: ".$filas["nombre"];?><br><br><?php
+        }
+        }else {
+            echo "No hay registros";
         }
         ?></div><?php
     }
