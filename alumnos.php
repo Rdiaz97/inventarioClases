@@ -70,9 +70,15 @@
             LEFT JOIN `estudiantes` ON `tabla_asistencia_estudiante`.`usuario` = `estudiantes`.`cedula`
         WHERE `materia`.`nombre` = '$nombre_materia' AND `estudiantes`.`nombre_estudiante` = '$nombre_estudiante';";
         $res=mysqli_query($conexion,$sql);
-        while ($filas=mysqli_fetch_array($res)) {
+        if(mysqli_num_rows($res)!= 0){
+        while ($filas=mysqli_fetch_array($res))
+         {
+
             ?><div id="section-consulta"><?php
             echo"estudiante: ".$filas["nombre_estudiante"];?><br><?php echo "hora de entrada a la clase: ".$filas["fecha_hora"];?><br><?php echo"materia: ".$filas["nombre"];?><br><br><?php
+        }
+        }else {
+            echo "No hay registros";
         }
         ?></div><?php
     }
