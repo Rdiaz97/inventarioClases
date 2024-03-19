@@ -93,7 +93,7 @@
             $script_tz = date_default_timezone_get();
             $username = $cedu; // Obtener el nombre de usuario del formulario
             $ip_address = $_SERVER['REMOTE_ADDR']; // Obtener la dirección IP del cliente
-            $timestamp = date('d-m-Y H:i:s'); // Obtener la fecha y hora actuales
+            $timestamp = date('Y-m-d H:i:s');
             // Query para insertar el registro de inicio de sesión en la base de datos
             $query = "INSERT INTO tabla_asistencia_estudiante (usuario, fecha_hora, direccion_ip, materia) VALUES ('$username', '$timestamp', '$ip_address', '$materia')";
             $resultado_query=mysqli_query($conexion,$query);

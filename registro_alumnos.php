@@ -82,7 +82,7 @@
     $celular=$_GET["celular"]??null;
     $correo=$_GET["email"]??null;
     if($registrar!=0){
-        if($cedula == 1 && $nombre == 1 && $celular == 1 && $correo == 1){
+        if($cedula != 0 && $nombre !=0 && $celular != 0 && $correo != 0){
             $sql="INSERT INTO `estudiantes` (`cedula`, `nombre_estudiante`, `celular`, `correo`) VALUES ('$cedula', '$nombre', '$celular', '$correo')";
             $res=mysqli_query($conexion,$sql);
             if($res){  

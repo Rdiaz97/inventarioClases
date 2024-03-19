@@ -77,6 +77,19 @@ section{
     z-index: 3;
 }
 
+#form-consulta {
+    position: relative; /* Cambia la posición a relativa */
+    margin-top: 10%;
+    margin-bottom: 20px; /* Agrega un margen en la parte inferior para separarlo del div */
+
+}
+
+#section-consulta {
+    text-align: center;
+    position: relative; /* Cambia la posición a relativa */
+    top: 10px; /* Ajusta la distancia hacia abajo según sea necesario */
+}
+
 a{
     text-decoration: none;
 }
@@ -104,7 +117,8 @@ form{
     transform: translateX(-50%);
     z-index: 2;
     padding-bottom: 40px; /* Añade relleno en la parte inferior del formulario para separarlo de la parte inferior de la página */
-  }
+}
+
 
 form div{
     margin: 10px 0;
@@ -229,5 +243,20 @@ input[type="button"]:hover {
 
     #historia{
         font-size: calc(3vh + 1vw);    
+    }
+
+    #form-consulta {
+        display: flex;
+        flex-direction: column;
+        position: relative; /* Cambia la posición a relativa */
+        margin-top: 30%;
+        margin-bottom: 20px; /* Agrega un margen en la parte inferior para separarlo del div */
+    
+    }
+    
+    #section-consulta {
+        text-align: center;
+        position: relative; /* Cambia la posición a relativa */
+        top: 10px; /* Ajusta la distancia hacia abajo según sea necesario */
     }
 }
