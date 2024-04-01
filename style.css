@@ -81,7 +81,7 @@ section{
     position: relative; /* Cambia la posición a relativa */
     margin-top: 10%;
     margin-bottom: 20px; /* Agrega un margen en la parte inferior para separarlo del div */
-
+    
 }
 
 #section-consulta {
@@ -106,6 +106,21 @@ button{
 
 #btnclase{
     width: fit-content;
+}
+#inventario{
+    text-align: center;
+    font-size: 3vh;
+    position: absolute;
+    top: calc(50% + 20px); /* Cambia el valor para ajustar la distancia vertical */
+    left: 70%;
+    transform: translateX(-50%);
+    z-index: 2;
+    padding-bottom: 40px; /* Añade relleno en la parte inferior del formulario para separarlo de la parte inferior de la página */
+
+}
+#inventario-t tbody tr th{
+    color: antiquewhite;
+    background-color:#720000;
 }
 
 form{

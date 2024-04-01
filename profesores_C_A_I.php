@@ -67,9 +67,50 @@
     </form>
 
     <form action="" method="get" id="inventario" name="formInventario" class="materia">
-        <h1>Inventario</h1>
-        <input type="submit" value="adsasd">
+        <table id="inventario-t">
+            <thead>
+                <h1>Inventario</h1>
+                <tr>
+                    <th>MAQUINA</th>
+                    <th>NOMBRE</th>
+                    <th>CPU</th>
+                    <th>RAM</th>
+                    <th>TARJETA MADRE</th>
+                    <th>DISCO DURO</th>
+                    <th>MONITOR</th>
+                    <th>TECLADO</th>
+                    <th>RATON</th>
+                    <th>ESTADO</th>
+                    <th>OBSERVACION</th>
+                    <th>UBICACION</th>
+                </tr>
+            </thead>
+            <tbody>
 
+                
+                <?php
+                    $sql_inventario="SELECT * FROM ficha_pc";
+                    $result_inven=mysqli_query($conexion,$sql_inventario);
+                    while ($filas_inven= mysqli_fetch_assoc($result_inven)) {
+                    
+                ?>
+                <tr>
+                    <th><?php echo $filas_inven["maquina"];?></th>
+                    <th><?php echo $filas_inven["nombre"];?></th>
+                    <th><?php echo $filas_inven["cpu"];?></th>
+                    <th><?php echo $filas_inven["ram"];?></th>
+                    <th><?php echo $filas_inven["tarjeta madre"];?></th>
+                    <th><?php echo $filas_inven["disco duro"];?></th>
+                    <th><?php echo $filas_inven["monitor"];?></th>
+                    <th><?php echo $filas_inven["teclado"];?></th>
+                    <th><?php echo $filas_inven["raton"];?></th>
+                    <th><?php echo $filas_inven["condicion del equipo"];?></th>
+                    <th><?php echo $filas_inven["observacion"];?></th>
+                    <th><?php echo $filas_inven["ubicacion"];?></th>
+                </tr>
+                <?php }?>
+            </tbody>
+        </table>
     </form>
 <script>
     const botonM = document.getElementById("materias");

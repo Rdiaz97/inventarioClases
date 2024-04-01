@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-03-2024 a las 05:39:50
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Tiempo de generación: 01-04-2024 a las 16:31:08
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -119,8 +119,14 @@ CREATE TABLE `ficha_pc` (
 --
 
 INSERT INTO `ficha_pc` (`maquina`, `nombre`, `cpu`, `ram`, `tarjeta madre`, `disco duro`, `monitor`, `teclado`, `raton`, `condicion del equipo`, `observacion`, `ubicacion`, `serial_maquina`) VALUES
-(1, 'laboratorio 1', 'pentium 4', '4gb', 'asus', '80gb', 'lg 21pulgadas', 'IBM', 'mouse', 'sirve', '', 'laboratorio puesto 1', '761f7162716f2'),
-(2, 'laboratorio 1', 'pentium 4', '4gb', 'asus', '80gb', 'lg 21pulgadas', 'IBM', 'mouse', 'sirve', '', 'laboratorio puesto 2', '761f7162716f3');
+(0, 'equipo 6/profesor', 'intel ® pentium ® CPU G3250 ®3.20GHz, 3200Mhz', '1 modulo DDR3 4GB', 'ECS H81H3-MY', 'WDC WD2500AVCS-572DY1 DE 250GB', 'Samsung SyncMaster T19B300', 'Genius Modelo= K639', 'Omega 278842', 'ACTIVO', 'Optimo, cuenta con dos S.O', '0', ''),
+(1, 'equipo 1', 'intel ® pentium ® CPU G3250 ®3.20GHz, 3200Mhz', '1 modulo DDR3 4GB', 'ECS H81H3-MY', 'No tiene', 'Samsung SyncMaster T19B300', 'No tiene', 'No tiene', 'INACTIVO', 'Faltan, disco duro y perifericos', '1', ''),
+(2, 'equipo 2', 'intel ® pentium ® CPU G3250 ®3.20GHz, 3200Mhz', '1 modulo DDR3 4GB', 'ECS H81H3-MY', 'ST3500413AS de 500GB', 'Samsung SyncMaster T19B300', 'Genius Modelo= K639', 'Genius Netscroll 120 ', 'ACTIVO', 'Funcionmiento optimo', '2', ''),
+(3, 'equipo 3', 'intel ® pentium ® CPU G3250 ®3.20GHz, 3200Mhz', '1 modulo DDR3 4GB', 'ECS H81H3-MY', 'WDC WD2500AVCS-572DY1 DE 250GB', 'Samsung SyncMaster T19B300', 'Genius Modelo= K639', 'Genius Netscroll 120 ', 'ACTIVO', 'Funcionamiento optimo', '3', ''),
+(4, 'equipo 4', 'intel ® pentium ® CPU G3250 ®3.20GHz, 3200Mhz', '1 modulo DDR3 4GB', 'ECS H81H3-MY', 'WDC WD2500AVCS-572DY1 DE 250GB', 'Samsung SyncMaster T19B300', 'Genius Modelo= K639', 'LM 3130', 'ACTIVO', 'Funcionamiento optimo', '4', ''),
+(5, 'equipo 5', 'AMD Sempron Procesador LG-1250, 2210Mhz', '2 modulo DDR3 3GB', 'AS Rock Phenom II', 'HITACHI HDS721680PLA 80GB', 'Samsung SyncMaster T19B300', 'Genius Modelo= K639', 'LM 3130', 'ACTIVO', 'Resolucion de pantalla no optima', '5', ''),
+(6, 'Desktop - 6775SPTB', 'intel ® pentium ® CPU G3250 ®3.20GHz, 3200Mhz', '1 modulo DDR3 4GB', 'ECS H81H3-MY', 'WDC WD21600AABS-00PRA0 DE 160GB', 'Samsung SyncMaster T19B300', 'Genius Modelo= K639', 'Omega 278842', 'ACTIVO', 'Funcionamiento optimo', '6', ''),
+(7, 'equipo 7', 'intel ® pentium ® CPU G3250 ®3.20GHz, 3200Mhz', '1 modulo DDR3 4GB', 'ECS H81H3-MY', 'No tiene', 'Samsung SyncMaster T19B300', 'No tiene', 'No tiene', 'INACTIVO', 'Faltan, disco duro y perifericos', '7', '');
 
 -- --------------------------------------------------------
 
@@ -199,7 +205,8 @@ INSERT INTO `pizarra` (`id`, `pizarra`, `fecha`, `profesor`, `materia`) VALUES
 (5, 'asdasd', '2024-03-16 10:41:49', 123123, '05A11'),
 (6, 'afdqwedqwdqwdqwd', '2024-03-16 13:26:32', 123123, '05A15'),
 (7, 'Hola juana', '2024-03-16 23:19:13', 123123, '05A14'),
-(8, '', '2024-03-17 00:33:54', 123123, '05B27');
+(8, '', '2024-03-17 00:33:54', 123123, '05B27'),
+(9, 'Hola dare clases aca', '2024-03-22 09:54:06', 123123, '05D43');
 
 -- --------------------------------------------------------
 
@@ -283,7 +290,8 @@ INSERT INTO `tabla_asistencia_estudiante` (`sesion_id`, `usuario`, `direccion_ip
 (32, 27319163, '192.168.1.100', '2024-03-16 23:19:39', '05A14'),
 (33, 27319163, '::1', '2024-03-17 00:34:41', '05A17'),
 (34, 27319163, '::1', '2024-03-17 00:36:18', '05A17'),
-(35, 27319163, '::1', '2024-03-17 00:36:49', '05A17');
+(35, 27319163, '::1', '2024-03-17 00:36:49', '05A17'),
+(36, 27319163, '::1', '2024-03-22 09:54:58', '05D43');
 
 -- --------------------------------------------------------
 
@@ -342,7 +350,8 @@ INSERT INTO `tabla_asistencia_profesores` (`id`, `usuario`, `fecha_hora`, `direc
 (36, 123123, '2024-03-17 00:30:26', '::1', '05B27'),
 (37, 123123, '2024-03-17 00:31:05', '::1', '05B27'),
 (38, 123123, '2024-03-17 00:33:21', '::1', '05B27'),
-(39, 123123, '2024-03-17 00:33:54', '::1', '05B27');
+(39, 123123, '2024-03-17 00:33:54', '::1', '05B27'),
+(40, 123123, '2024-03-22 09:54:06', '::1', '05D43');
 
 -- --------------------------------------------------------
 
@@ -447,19 +456,19 @@ ALTER TABLE `trimestre`
 -- AUTO_INCREMENT de la tabla `pizarra`
 --
 ALTER TABLE `pizarra`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `tabla_asistencia_estudiante`
 --
 ALTER TABLE `tabla_asistencia_estudiante`
-  MODIFY `sesion_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `sesion_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT de la tabla `tabla_asistencia_profesores`
 --
 ALTER TABLE `tabla_asistencia_profesores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- Restricciones para tablas volcadas
